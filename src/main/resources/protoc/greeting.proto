@@ -1,0 +1,11 @@
+syntax = "proto3";
+option java_package = "com.demo.grpcGreeting";
+service Greeter {
+  rpc greet (stream ClientInput) returns (stream ServerOutput) {}
+}
+message ClientInput {
+  string name = 1;
+}
+message ServerOutput {
+  string message = 1;
+}
